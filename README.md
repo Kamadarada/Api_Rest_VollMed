@@ -1,6 +1,6 @@
-#Api Rest desenvolvida em Java
+# Api Rest desenvolvida em Java
 
-##Tecnologias utilizadas:
--Spring Boot 3
--Maven
--Flyway
+### Tecnologias utilizadas:
+* Spring Boot 3
+* Maven
+* Flyway
