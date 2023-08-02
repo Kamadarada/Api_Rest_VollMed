@@ -21,6 +21,7 @@ public class MedicoController {
     @Transactional
     public ResponseEntity cadastrar(@RequestBody DadosCadastroMedico dados){
         repository.save(new Medico(dados));
+        System.out.println("Sucesso! Médico cadastrado na base de dados VollMed");
         return ResponseEntity.ok("Sucesso! Médico cadastrado na base de dados VollMed");
 
     }

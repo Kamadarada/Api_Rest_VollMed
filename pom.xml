@@ -62,10 +62,32 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-maven-plugin</artifactId>
+			<version>9.20.1</version>
+		</dependency>
+
+
+
 	</dependencies>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>4.1.0</version>
+				<configuration>
+					<url>jdbc:mysql://localhost:3306</url>
+					<user>root</user>
+					<password>hz!ng#pke36</password>
+					<schemas>
+						<schema>VollMedApi</schema>
+					</schemas>
+				</configuration>
+			</plugin>
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
