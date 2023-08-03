@@ -2,12 +2,14 @@ package med.voll.api.controller;
 
 
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import med.voll.api.Endereco.Endereco;
 import med.voll.api.medico.DadosCadastroMedico;
 import med.voll.api.medico.Medico;
 import med.voll.api.medico.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.ErrorResponseException;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,7 +21,9 @@ public class MedicoController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity cadastrar(@RequestBody DadosCadastroMedico dados){
+    //Método cadastrar recebe dto de DadosCadastroMedico
+    public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroMedico dados){
+
         repository.save(new Medico(dados));
         System.out.println("Sucesso! Médico cadastrado na base de dados VollMed");
         return ResponseEntity.ok("Sucesso! Médico cadastrado na base de dados VollMed");

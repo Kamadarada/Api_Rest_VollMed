@@ -2,6 +2,7 @@ package med.voll.api.controller;
 
 
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import med.voll.api.paciente.DadosCadastroPaciente;
 import med.voll.api.paciente.Paciente;
 import med.voll.api.paciente.PacienteRepository;
@@ -22,7 +23,7 @@ public class PacienteController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity CadastroPaciente(@RequestBody DadosCadastroPaciente dados){
+    public ResponseEntity CadastroPaciente(@RequestBody @Valid DadosCadastroPaciente dados){
         repository.save(new Paciente(dados));
         return ResponseEntity.ok("Sucesso! Cadastro de cliente realizado na base da dados VollMed!");
     }

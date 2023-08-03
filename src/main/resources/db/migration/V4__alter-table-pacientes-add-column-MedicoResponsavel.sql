@@ -1,0 +1,1 @@
+alter table pacientes add MedicoResponsavel varchar(30) not null;

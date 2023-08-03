@@ -24,10 +24,13 @@ public class Paciente {
 
     private String data;
 
+    private String medicoresponsavel;
+
     public Paciente(DadosCadastroPaciente dados){
         this.nomepaciente = dados.NomePaciente();
         this.idade = dados.Idade();
         this.data = dados.Data();
+        this.medicoresponsavel = dados.MedicoResponsavel();
     }
 
 }
